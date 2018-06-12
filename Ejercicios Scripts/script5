@@ -1,0 +1,30 @@
+#! bin/bash
+
+#Script 05. Comprueba si un fichero dado, contiene la palabra dada
+
+lineas= grep -cw $1 $2
+
+if [ $# -ne 2 ]
+	then
+		echo "Solo se deben pasar 2 parametros"
+		exit 1
+fi
+
+if [ -e $2 ]
+	then
+		if [ -f $2 ]
+			then
+				if [ "$lineas" = 1 ]
+					then
+						echo "La palabra clave esta incluida en el fichero $2"
+				else
+					echo "La palabra clave no esta incluida en el fichero $2"
+				fi
+		else
+			echo "El parametro $1 no es un fichero"
+			exit 1
+		fi
+else
+	echo "El fichero $2 no existe"
+fi
+

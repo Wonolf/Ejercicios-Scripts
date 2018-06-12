@@ -1,0 +1,21 @@
+#! bin/bash
+
+#Script 10. Recibe varios parametros y dice cuantos son directorios
+#y cuantos son archivos. Muestra la cuenta al final
+
+dir=0
+fic=0
+
+for var in $*;
+do
+	if [ -d $var ]
+		then
+			dir=`expr $dir + 1`
+	elif [ -f $var ]
+		then
+			fic=`expr $fic + 1`
+	fi
+done
+echo "Se han introducido $dir directorios y $fic ficheros"
+echo "Se han introducido $# parametros en total"
+exit 0

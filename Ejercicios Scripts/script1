@@ -1,0 +1,51 @@
+#! bin/bash
+
+#Script 01. Elimina un archivo o directorio. Pregunta antes si esta seguro
+#de hacer la accion
+
+if [ $# -ne 1 ]
+	then
+		echo "Solo se debe pasar 1 parametro"
+		exit 1
+fi
+
+if [ -e $1 ]
+	then
+		if [ -f $1 ]
+			then
+				echo "¿Esta seguro de que quiere borrar el archivo?[s/n]"
+				read resp1
+
+				if [ $resp1 = 's' ]
+					then
+						rm -f $1
+						echo "Se ha borrado el archivo"
+				elif [ $resp1 = 'n' ]
+					then
+						echo "Ha decidido no borrar el archivo"
+				else
+					echo "Error. Respuesta no admitida"
+					exit 1				
+				fi
+		elif [ -d $1 ]
+			then
+				echo "¿Esta seguro de que quiere borrar el directorio?[s/n]"
+				read resp2
+
+				if [ $resp2 = 's' ]
+					then
+						rm -d $1
+						echo "Se ha borrado el directorio"
+				elif [ $resp2 = 'n' ]
+					then
+						echo "Ha decidido no borrar el directorio"
+				else
+					echo "Error. Respuesta no admitida"
+					exit 1				
+				fi
+		fi
+else
+	echo "El parametro dado no existe"
+	exit 1
+fi
+exit 0

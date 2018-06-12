@@ -1,0 +1,27 @@
+#! bin/bash
+
+#Script 12. Introducir una ruta de un directorio por teclado.
+#El script nos devuelve la cantida de ficheros y directorios.
+
+read -p "Introduzca la ruta de un directorio: " dire
+until [ -d $dire ];
+do
+read -p "Introduzca la ruta de un directorio: " dire
+done
+
+contd=0
+contf=0
+
+for i in `ls $dire`
+do
+	if [ -d $i ]
+		then
+			contd=`expr $contd + 1`
+	elif [ -f $i ]
+		then
+			contf=`expr $contf + 1`
+	fi
+done
+
+echo "Hay $contd directorios y $contf ficheros"
+exit 0

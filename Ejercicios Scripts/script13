@@ -1,0 +1,17 @@
+#! bin/bash
+
+#Script 13. Nos pide un numero y nos muestra su tabla de multiplicar
+
+echo "Introduce un numero [1-100]"
+read numero;
+
+if [ $numero -gt 0 ] && [ $numero -lt 101 ]
+	then
+		for i in `seq 1 10`
+		do
+			multi=`expr $numero \* $i`
+			echo "$numero * $i = $multi"
+		done
+else
+	echo "Numero no valido"
+fi

@@ -1,0 +1,14 @@
+#! bin/bash
+
+#Script 04. Comprueba si el usuario actual es blas. Si es asi
+#escribe blas 5 veces, si no, se despide amablemente.
+
+if [ $nombre = 'blas' ]
+	then
+		for i in `seq 1 5`
+		do
+			echo "blas "
+		done
+else
+	echo "Usted no es blas. Que pase un buen dia. Hasta pronto!"
+fi

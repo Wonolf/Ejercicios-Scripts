@@ -1,0 +1,13 @@
+#! bin/bash
+
+#Script 09. Nos pide introducir un caracter y que nos
+#diga de que tipo es (numero, letra o especial)
+
+read tecla
+case $tecla in
+[a-z,A-Z]) echo "$tecla es un caracter"
+;;
+[0-9]) echo "$tecla es un numero"
+;;
+*) echo "$tecla es un caracter especial"
+esac

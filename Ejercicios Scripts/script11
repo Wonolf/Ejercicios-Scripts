@@ -1,0 +1,35 @@
+#! bin/bash
+
+#Script 11. Muestra un menu con varios articulos.
+#Calcula el cambio y lo que falta
+
+echo "Bienvenido a la tienda:\n [1]Patatas: 2€\n [2]Coca cola: 3€\n [3]Pipas: 1€\n [4]Tarta de fresas: 8€\n [5]Salir"
+read opcion
+case $opcion in
+1) precio=2
+;;
+2) precio=3
+;;
+3) precio=1
+;;
+4) precio=8
+;;
+*) echo "opcion invalida"
+esac
+
+echo "Introduzca la cantidad a pagar: "
+read monedas
+
+if [ $monedas = $precio ]
+	then
+		echo "Gracias por su compra"
+elif [ $monedas -gt $precio ]
+	then
+		cambio=`expr $monedas - $precio`
+		echo "Gracias por su compra, su cambio es de $cambio €"
+else
+	falta=`expr $precio - $monedas`
+	echo "Le faltan $falta € para completar su compra"
+fi
+exit 0
+

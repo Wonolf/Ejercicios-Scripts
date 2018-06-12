@@ -1,0 +1,46 @@
+#! bin/bash
+
+#Script 06. Un menú para elegir distintas operaciones matematicas
+
+echo "Bienvenido al script calculadora."
+echo "Introduzca una de las siguientes opciones: "
+echo " [1]Suma \n [2]Resta \n [3]Multiplicacion \n [4]Salir"
+
+read opcion
+
+if [ $opcion = '1' ]
+	then
+		echo "Introduce un numero: "
+		read num1
+		echo "Introduce otro numero: "
+		read num2
+
+		suma=`expr $num1 + $num2`
+
+		echo "El resultado de la suma es $suma"
+elif [ $opcion = '2' ]
+	then
+		echo "Introduce un numero: "
+		read num1
+		echo "Introduce otro numero: "
+		read num2
+
+		resta=`expr $num1 - $num2`
+
+		echo "El resultado de la resta es $resta"
+elif [ $opcion = '3' ]
+	then
+		echo "Introduce un numero: "
+		read num1
+		echo "Introduce otro numero: "
+		read num2
+
+		multi=`expr $num1 \* $num2`
+
+		echo "El resultado de la multiplicacion es $multi"
+elif [ $opcion = '4' ]
+	then
+		echo "Saliendo..."
+else
+	echo "Error: opcion no valida"
+fi

@@ -1,0 +1,18 @@
+#! bin/bash
+
+#Script 07. Nos pide la edad y dice si es mayor o menor de edad
+
+echo "Introduce una edad: "
+read edad
+if [ $edad -lt 1 ]
+	then
+		echo "La edad debe de ser mayor que 0"
+elif [ $edad -gt 0 ] && [ $edad -lt 18 ]
+	then
+		echo "Es menor de edad"
+elif [ $edad -gt 17 ] && [ $edad -lt 150 ]
+	then
+		echo "Es mayor de edad"
+else
+	echo "La edad es demasiado alta"
+fi

@@ -1,0 +1,5 @@
+#! bin/bash
+
+#Script 02. Lee un comando como parametro y devuelve informacion sobre el
+
+man $1
